@@ -1,0 +1,1390 @@
+@import url("https://use.typekit.net/rha0uth.css");
+
+.App {
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: adorn-slab-serif, sans-serif;
+  background-color: #FBF8EE;
+
+}
+
+.home-container{
+  width: 100%;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.intro{
+  position: absolute;
+  width: 32%;
+  height: 32%;
+  left: 30%;
+  top: 25%;
+}
+
+.intro img{
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.close{
+  position: absolute;
+  width: 32%;
+  height: 32%;
+  left: 30%;
+  top: 25%;
+}
+
+.close img{
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.open{
+  position: relative;
+  top: 20%;
+  left: 34%;
+  width: 32%;
+  height: 50%;
+  z-index: 2;
+}
+
+.open img{
+  width: 100%;
+  height: 100%;
+}
+
+.open-btn{
+  width: 18%;
+  height: 34%;
+  border-radius: 50%;
+  border: 1px solid red;
+  cursor: pointer;
+  position: absolute;
+  top: 31%;
+  left: 41.5%;
+  z-index: 3;
+}
+
+.card-container{
+  position: absolute;
+  top: 0;
+  left: 5%;
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  padding: 100px 0;
+ 
+}
+
+.empty{
+  display: none;
+}
+
+
+.trads, .white, .party{
+  width: 30%;
+  height: 100%;
+  z-index: 5;
+  
+}
+
+.card-image{
+  width: 100%;
+  height: 80%;
+}
+
+
+.card-image img{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+.join-us-btn{
+  width: fit-content;
+  height: fit-content;
+  background: #4F5244;
+  margin: 30px auto;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px 30px;
+  text-transform: uppercase;
+  transition: all ease-in-out 0.7s;
+  cursor: pointer;
+}
+
+.join-us-btn:hover{
+  background: #65350F;
+  color: #ffffff;
+}
+.party a, .white a, .trads a{
+  text-decoration: none;
+}
+
+
+/* join form */
+
+.join-container{
+  background: #414436;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.left-side{
+  grid-column: 1/2;
+  grid-row: 1/3;
+  background: transparent;
+
+}
+
+.form-side{
+  grid-column: 2/3;
+  grid-row: 1/3;
+  background: transparent;
+  padding: 20px;
+
+}
+
+.right-side{
+  grid-column: 3/4;
+  grid-row: 1/3;
+  background: transparent;
+
+}
+
+
+.img-container{
+  width: 100%;
+  height: 100%;
+}
+
+.img-container img{
+  width: 100%;
+  height: 100%;
+}
+
+.form-container{
+  width: 100%;
+  height: 70%;
+  margin-top: 3em;
+  color: #F6EBD6;
+
+}
+
+.info{
+  font-size: 1em;
+  line-height: 24px;
+  text-align: left;
+}
+.form{
+  margin-top: 4em;
+  width: 100%;
+  height: 70%;
+  position: relative;
+
+}
+
+.attr-block{
+  width: 100%;
+  height: 75px;
+  margin-bottom: 80px;
+}
+
+.attr-title{
+  display: block;
+  font-size: 1em;
+  text-align: left;
+  
+}
+
+input{
+  background: transparent;
+  width: 100%;
+  height: 5.54vh;
+  color: #E4D5B9;
+  padding: 10px 15px;
+  font-size: 1em;
+  border: 0.8px solid #F6EBD6;
+  z-index: 2;
+  outline: none;
+}
+
+
+
+
+.btn{
+
+  position: absolute;
+  font-size: 0.875em;
+  bottom: 0;
+  left: 25%;  
+  color: #414436;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: fit-content;
+  height: fit-content;
+  background: #F6EBD6;
+  padding: 0px 30px;
+  cursor: pointer;
+  transition: all 0.7s ease-in-out;
+}
+
+.empty-block{
+  display: none;
+    
+}
+
+.btn:hover{
+  opacity: 0.7;
+}
+
+.success-message{
+  display: block;
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 30px;
+  background: #caf7d4;
+  color: #414436;
+  font-size: 0.75em;
+  padding: 5px 10px;
+  font-weight: bold;
+  line-height: 1.2em;
+  text-align: left;
+}
+
+.error-message{
+  color: rgb(227, 134, 134);
+  font-size: 0.75em;
+  text-align: left;
+  line-height: 1.25em;
+  float: left;
+  font-size: 200;
+  margin-top: 10px;
+  
+
+}
+
+
+
+
+/* admin */
+
+
+.admin-container{
+  width: 100%;
+  height: fit-content;
+  background-color: #FBF8EE;
+  
+}
+
+.container-title{
+  margin-top: 50px;
+  font-size: 3em;
+  font-weight: 600;
+  text-align: center;
+  color: #4F5244;
+  line-height: 42px;
+}
+
+.guests-container{
+
+  width: 60%;
+  height: fit-content;
+  margin: 50px auto;
+  padding: 20px;
+  
+}
+
+.no-guests{
+  font-size: 1.5em;
+  text-align: center;
+}
+
+.titles{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.title-name, .title-number{
+  width: 50%;
+  height: fit-content;
+  font-size: 1em;
+  text-align: left;
+  font-weight: 500;
+  padding: 10px 20px;
+  background: #414436;
+  color: #ffffff;
+  /* border-bottom: 1px solid #4F5244; */
+}
+
+.container-body{
+  display: flex;
+  width: 100%;
+}
+
+.guest-name{
+  background: #dbf6e1;
+  width: 50%;
+  height: fit-content;
+  font-size: 0.875em;
+  padding: 5px 20px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+/* media queries */
+
+@media (max-width: 1242px) and (min-width: 1024px) {  
+
+  .intro{
+    top: 30%;
+    left: 32%;
+    height: 25%;
+  }
+
+  .close{
+    height: 25%;
+    left: 32%;
+    top: 30%;
+  }
+
+  .open{
+    width: 32%;
+    height: 37%;
+    top: 28%;
+    left: 33%;
+  }
+
+
+  .card-container{
+    width: 95%;
+    left: 2%;
+    padding: 130px 0;
+
+  }
+
+  .trads, .white, .party{
+    position: relative;
+    top: 15%;
+    width: 31%;
+    height: 70%;
+      
+  }
+
+
+  .info{
+    font-size: 0.875em;
+    line-height: 18px;
+ 
+  }
+
+  .attr-title{
+    font-size: 0.875em;
+    
+  }
+
+  .btn{
+    
+    padding: 5px 20px;
+  }
+
+
+
+}
+
+
+
+@media (max-width: 1024px) and (min-width: 956px) {
+  
+
+  .intro{
+    top: 30%;
+    left: 32%;
+    width: 35%;
+    height: 25%;
+  }
+
+  .close{
+    width: 35%;
+    height: 25%;
+    left: 32%;
+    top: 30%;
+  }
+
+  .open{
+    width: 35%;
+    height: 37%;
+    top: 28%;
+    left: 33%;
+  }
+
+
+  .card-container{
+    width: 95%;
+    left: 2%;
+    padding: 130px 0;
+
+  }
+
+  .trads, .white, .party{
+    position: relative;
+    top: 15%;
+    width: 31%;
+    height: 70%;
+          
+  }
+
+
+  .left-side{
+    grid-column: 1/2;
+    grid-row: 1/2;
+      
+  }
+  
+  .form-side{
+    grid-column: 2/3;
+    grid-row: 1/2;
+  
+  }
+  
+  .right-side{
+    grid-column: 3/4;
+    grid-row: 1/2;
+      
+  }
+
+
+
+  .info{
+    font-size: 0.875em;
+    line-height: 1.5em;
+    
+  }
+
+  .attr-title{
+    font-size: 0.75em;
+    
+  }
+
+  .btn{
+    
+    font-size: 0.625em;
+    bottom: -120px;
+    padding: 5px 20px;
+  }
+
+
+  
+}
+
+
+
+@media (max-width: 956px) and (min-width: 840px) {
+
+  .intro{
+    top: 30%;
+    left: 32%;
+    width: 35%;
+    height: 25%;
+  }
+
+  .close{
+    width: 35%;
+    height: 25%;
+    left: 32%;
+    top: 30%;
+  }
+
+  .open{
+    width: 35%;
+    height: 37%;
+    top: 28%;
+    left: 33%;
+  }
+
+  
+  .card-container{
+    width: 95%;
+    left: 2%;
+    padding: 160px 0;
+
+  }
+
+  .trads, .white, .party{
+    position: relative;
+    top: 15%;
+    width: 31%;
+    height: 70%;
+    /* display: none; */
+      
+  }
+  
+  .left-side{
+    grid-column: 1/2;
+    grid-row: 1/2;
+      
+  }
+  
+  .form-side{
+    grid-column: 2/3;
+    grid-row: 1/2;
+  
+  }
+  
+  .right-side{
+    grid-column: 3/4;
+    grid-row: 1/2;
+      
+  }
+  .form-container{
+    margin: 10px auto;
+  }
+
+
+
+  .info{
+    font-size: 0.875em;
+    line-height: 1.5em;
+    
+  }
+
+  .attr-title{
+    font-size: 0.75em;
+    
+  }
+
+  .btn{
+    
+    font-size: 0.625em;
+    bottom: -130px;
+    padding: 5px 20px;
+  }
+
+
+  
+}
+
+@media (max-width: 840px) and (min-width: 768px) {
+
+  
+  .intro{
+    top: 40%;
+    left: 25%;
+    width: 48%;
+    height: 20%;
+  }
+
+  .close{
+    width: 48%;
+    height: 20%;
+    left: 25%;
+    top: 40%;
+  }
+
+  .open{
+    width: 48%;
+    height: 30%;
+    top: 28%;
+    left: 25%;
+  }
+
+  .card-container{
+    width: 95%;
+    top: 15%;
+    left: 2%;
+    padding: 180px 0;
+
+  }
+
+  .trads, .white, .party{
+    position: relative;
+    top: 15%;
+    width: 31%;
+    height: 60%;
+    /* display: none; */
+      
+  }
+  
+
+  .join-container{
+    overflow-y: scroll;
+  }
+
+
+  .left-side{
+    grid-column: 1/2;
+    grid-row: 1/2;
+      
+  }
+  
+  .form-side{
+    grid-column: 1/4;
+    grid-row: 2/3;
+  
+  }
+  
+  .right-side{
+    grid-column: 3/4;
+    grid-row: 1/2;
+      
+  }
+
+  .img-container{
+    width: 95%;
+    height: 85%;
+  }
+
+
+  .form-container{
+    width: 60%;
+    margin: -60px auto;
+    height: fit-content;
+  }
+
+
+
+  .info{
+    font-size: 0.75em;
+    line-height: 1.5em;
+    
+  }
+
+  .form{
+    margin-top: 1.5em;
+      
+  }
+
+  .attr-block{
+    width: 100%;
+    height: 75px;
+    margin-bottom: 50px;
+  }
+
+  .attr-title{
+    font-size: 0.75em;
+    
+  }
+
+  .btn{
+    
+    font-size: 0.625em;
+    left: 30%;
+    bottom: -140px;
+    padding: 5px 20px;
+  }
+
+  .empty-block{
+    display: block;
+    position: absolute;
+    padding: 50px 20px;
+    margin-top: 40px;
+    bottom: -300px;
+    
+  }
+
+  .error-message{
+    font-size: 0.625em;
+  }
+
+
+  
+}
+
+@media (max-width: 768px) and (min-width: 520px) {
+
+
+  .intro{
+    top: 30%;
+    left: 32%;
+    width: 38%;
+    height: 18%;
+  }
+
+  .close{
+    width: 38%;
+    height: 18%;
+    left: 32%;
+    top: 30%;
+  }
+
+  .open{
+    width: 38%;
+    height: 25%;
+    top: 28%;
+    left: 33%;
+  }
+
+  .card-container{
+    width: 95%;
+    left: 2%;
+    padding: 220px 0;
+
+  }
+
+  .trads, .white, .party{
+    position: relative;
+    top: 20%;
+    width: 31%;
+    height: 52%;
+    /* display: none; */
+      
+  }
+
+  .join-us-btn{
+    font-size: 12px;
+    padding: 0 20px;
+  }
+
+  
+  .join-container{
+    overflow-y: scroll;
+  }
+  
+  .left-side{
+    grid-column: 1/2;
+    grid-row: 1/2;
+          
+  }
+  
+  .form-side{
+    grid-column: 1/4;
+    grid-row: 2/3;
+  
+  }
+  
+  .right-side{
+    grid-column: 3/4;
+    grid-row: 1/2;
+      
+  }
+
+  .img-container{
+    width: 100%;
+    height: 90%;
+  }
+
+
+  .form-container{
+    width: 60%;
+    margin: -40px auto;
+    height: fit-content;
+
+  }
+
+  .info{
+    font-size: 0.75em;
+    line-height: 1.5em;
+       
+  }
+
+  .form{
+    margin-top: 1.5em;
+      
+  }
+
+  .attr-block{
+    width: 100%;
+    height: 75px;
+    margin-bottom: 40px;
+  }
+
+  .attr-title{
+    font-size: 0.75em;
+    
+  }
+
+  .btn{
+    
+    font-size: 0.625em;
+    left: 30%;
+    bottom: -130px;
+    padding: 5px 20px;
+    
+  }
+
+  .empty-block{
+    display: block;
+    position: absolute;
+    padding: 50px 20px;
+    margin-top: 40px;
+    bottom: -300px;
+    
+  }
+
+  .error-message{
+    font-size: 0.625em;
+  }
+
+  
+}
+
+
+
+@media (max-width: 520px) and (min-width: 440px) {
+
+  .intro{
+    top: 35%;
+    left: 30%;
+    width: 42%;
+    height: 15%;
+  }
+
+  .close{
+    width: 42%;
+    height: 15%;
+    left: 30%;
+    top: 35%;
+  }
+
+  .open{
+    width: 42%;
+    height: 25%;
+    top: 30%;
+    left: 30%;
+  }
+
+  .card-container{
+    width: 60%;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-around;
+    left: 20%;
+    padding: 40px 0;
+
+    
+  }
+
+  .empty{
+    display: block;
+    width: 100%;
+    height: 90px;
+  
+  }
+
+  .trads, .white, .party{
+    position: relative;
+    top: 10%;
+    width: 100%;
+    height: 60%;
+        /* display: none; */
+      
+  }
+
+  .trads{
+    left: -10px;
+  }
+
+
+  .join-us-btn{
+    font-size: 12px;
+    padding: 0 20px;
+  }
+
+  .join-container{
+    display: block;
+    position: relative;
+
+  }
+  
+  .left-side{
+    display: none;
+      
+  }
+  
+  .form-side{
+    z-index: 6;
+    position: absolute;
+    top: 25%;
+    left: 0;
+      
+  }
+  
+  .right-side{
+    width: 100%;
+    height: 100%;
+      
+  }
+
+  .img-container{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .form-container{
+    width: 90%;
+    margin: -20px auto;
+    height: fit-content;
+  }
+
+
+
+  .info{
+    font-size: 0.75em;
+    line-height: 1.5em;
+    
+  }
+
+  .form{
+    margin-top: 1.5em;
+      
+  }
+
+  .attr-block{
+    width: 100%;
+    height: 75px;
+    margin-bottom: 70px;
+
+  }
+
+  .attr-title{
+    font-size: 0.75em;
+    
+  }
+
+  .btn{
+    
+    font-size: 0.625em;
+    left: 30%;
+    bottom: -180px;
+    padding: 5px 20px;
+  }
+
+
+  
+}
+
+
+@media (max-width: 440px) and (min-width: 375px) {
+
+  .intro{
+    top: 40%;
+    left: 22%;
+    width: 55%;
+    height: 15%;
+  }
+
+  .close{
+    width: 55%;
+    height: 15%;
+    left: 22%;
+    top: 40%;
+  }
+
+  .open{
+    width: 50%;
+    height: 25%;
+    top: 30%;
+    left: 25%;
+  }
+
+
+  .card-container{
+    width: 70%;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-around;
+    left: 15%;
+    padding: 40px 0;
+
+    
+  }
+
+  .empty{
+    display: block;
+    width: 100%;
+    height: 90px;
+  
+  }
+
+  .trads, .white, .party{
+    position: relative;
+    top: 10%;
+    width: 100%;
+    height: 60%;
+        /* display: none; */
+      
+  }
+
+  .trads{
+    left: -10px;
+  }
+
+  .join-us-btn{
+    padding: 0 30px;
+
+  }
+
+  .join-container{
+    display: block;
+    position: relative;
+
+  }
+  
+  .left-side{
+    display: none;
+      
+  }
+  
+  .form-side{
+    z-index: 6;
+    position: absolute;
+    top: 25%;
+    left: 0;
+      
+  }
+  
+  .right-side{
+    width: 100%;
+    height: 100%;
+      
+  }
+
+  .img-container{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .form-container{
+    width: 90%;
+    margin: -20px auto;
+    height: fit-content;
+  }
+
+  
+
+
+  .info{
+    font-size: 0.75em;
+    line-height: 1.5em;
+    
+  }
+
+  .form{
+    margin-top: 1.5em;
+      
+  }
+
+  .attr-block{
+    width: 100%;
+    height: 75px;
+    margin-bottom: 70px;
+  }
+
+  .attr-title{
+    font-size: 0.75em;
+        
+  }
+
+  .btn{
+    
+    font-size: 0.625em;
+    left: 30%;
+    bottom: -180px;
+    padding: 5px 20px;
+  }
+
+  .error-message{
+    font-size: 0.65em;
+  }
+
+
+  
+}
+
+
+@media (max-width: 375px) and (min-width: 280px) {
+
+  .intro{
+    top: 40%;
+    left: 15%;
+    width: 70%;
+    height: 18%;
+  }
+
+  .close{
+    width: 70%;
+    height: 18%;
+    left: 15%;
+    top: 40%;
+  }
+
+  .open{
+    width: 70%;
+    height: 25%;
+    top: 30%;
+    left: 15%;
+  }
+
+
+  .card-container{
+    width: 48%;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-around;
+    left: 25%;
+    top: 3%;
+    padding: 40px 0;
+
+    
+  }
+
+  .empty{
+    display: block;
+    width: 100%;
+    height: 90px;
+  
+  }
+
+  .trads, .white, .party{
+    position: relative;
+    top: 10%;
+    width: 100%;
+    height: 50%;
+        /* display: none; */
+      
+  }
+
+  .trads{
+    left: -10px;
+  }
+
+  .join-us-btn{
+    padding: 0 30px;
+    font-size: 0.625em;
+    margin: 10px auto;
+
+
+  }
+
+  .join-container{
+    display: block;
+    position: relative;
+
+  }
+  
+  .left-side{
+    display: none;
+      
+  }
+  
+  .form-side{
+    z-index: 6;
+    position: absolute;
+    top: 25%;
+    left: 0;
+      
+  }
+  
+  .right-side{
+    width: 100%;
+    height: 100%;
+      
+  }
+
+  .img-container{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .form-container{
+    width: 95%;
+    margin: -20px auto;
+    height: fit-content;
+  }
+
+
+
+  .info{
+    font-size: 0.75em;
+    line-height: 1.5em;
+    
+  }
+
+  .form{
+    margin-top: 1.5em;
+      
+  }
+
+  .attr-block{
+    width: 100%;
+    height: 75px;
+    margin-bottom: 70px;
+  }
+
+  .attr-title{
+    font-size: 0.75em;
+    
+  }
+
+  .btn{    
+    font-size: 0.625em;
+    left: 28%;
+    bottom: -170px;
+    padding: 5px 20px;
+  }
+
+  .error-message{
+    font-size: 0.625em;
+  }
+
+
+  
+}
+
+@media (max-width: 280px) and (min-width: 130px) {
+
+  .intro{
+    top: 40%;
+    left: 10%;
+    width: 80%;
+    height: 15%;
+  }
+
+  .close{
+    width: 80%;
+    height: 15%;
+    left: 10%;
+    top: 40%;
+  }
+
+  .open{
+    width: 80%;
+    height: 20%;
+    top: 40%;
+    left: 10%;
+  }
+
+
+  .card-container{
+    width: 85%;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-around;
+    left: 7%;
+    padding: 60px 0;
+
+    
+  }
+
+  .empty{
+    display: block;
+    width: 100%;
+    height: 90px;
+  
+  }
+
+  .trads, .white, .party{
+    position: relative;
+    top: 10%;
+    width: 100%;
+    height: 60%;
+        /* display: none; */
+      
+  }
+
+  .trads{
+    left: -10px;
+  }
+
+  .join-us-btn{
+    padding: 0 30px;
+
+  }
+
+  .join-container{
+    display: block;
+    position: relative;
+
+  }
+  
+  .left-side{
+    display: none;
+      
+  }
+  
+  .form-side{
+    z-index: 6;
+    position: absolute;
+    top: 25%;
+    left: 0;
+      
+  }
+  
+  .right-side{
+    width: 100%;
+    height: 100%;
+      
+  }
+
+  .img-container{
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .form-container{
+    width: 100%;
+    margin: auto;
+    height: fit-content;
+  }
+
+
+
+  .info{
+    font-size: 0.75em;
+    line-height: 1.5em;
+    
+  }
+
+  .form{
+    margin-top: 1.5em;
+      
+  }
+
+  .attr-block{
+    width: 100%;
+    height: 75px;
+    margin-bottom: 40px;
+  }
+
+  .attr-title{
+    font-size: 0.75em;
+    
+  }
+
+  .btn{    
+    font-size: 0.625em;
+    left: 25%;
+    bottom: -100px;
+    padding: 5px 20px;
+  }
+
+
+  
+}
+
+
+
+
