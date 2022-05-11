@@ -62,7 +62,6 @@
   width: 18%;
   height: 34%;
   border-radius: 50%;
-  border: 1px solid red;
   cursor: pointer;
   position: absolute;
   top: 31%;
@@ -213,7 +212,7 @@
 input{
   background: transparent;
   width: 100%;
-  height: 5.54vh;
+  height: 45px;
   color: #E4D5B9;
   padding: 10px 15px;
   font-size: 1em;
@@ -221,6 +220,8 @@ input{
   z-index: 2;
   outline: none;
 }
+
+
 
 
 
@@ -258,6 +259,20 @@ input{
   margin-bottom: 30px;
   background: #caf7d4;
   color: #414436;
+  font-size: 0.75em;
+  padding: 5px 10px;
+  font-weight: bold;
+  line-height: 1.2em;
+  text-align: left;
+}
+
+.no-content-message{
+  display: block;
+  width: 100%;
+  height: fit-content;
+  margin-bottom: 30px;
+  background: #f7cad8;
+  color: #fa1919;
   font-size: 0.75em;
   padding: 5px 10px;
   font-weight: bold;

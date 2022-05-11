@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../App.css';
 import Axios from 'axios';
@@ -16,9 +16,10 @@ const JoinForm = () => {
 
     const [formValues, setFormValues] = useState(initialValues);
     const [errors, setErrors] = useState({});
-    const [isSubmit, setIsSubmit] = useState(false);
     const [message, setMessage] = useState("");
+    const [noContentMessage, setnoContentMessage] = useState("");
     const [showMessage, setShowMessage] = useState(false);
+    const [noContent, setNoContent] = useState(false);
 
 
 
@@ -32,35 +33,90 @@ const JoinForm = () => {
     }
 
     const handleSubmit = () => {
- 
-        setErrors(validate(formValues));
-        setIsSubmit(true);
-        setFormValues({...formValues, name: "", numOfGuests: "" });
+
+        
+        if(formValues.name === "" || formValues.numOfGuests === ""){
+
+            setErrors(validate(formValues));
+
+            // setIsSubmit(false);
+
+            // setNoContent(true);
+            // setnoContentMessage("Please make sure you type in your name and the number of accompanying guests.");
+
+            // setTimeout(() => {
+            //     setMessage(false);
+            //     setNoContent(false);
+
+            // }, 2000);
+
+
+        } else{
+            postData();
+        }
+
+        // setIsSubmit(true);
+
+        
+
+        
 
     }
 
     const postData = useCallback(() => {
-        
+
         Axios.post(`/save-a-date/${id}`, formValues)
         .then((res) => {
-            // console.log(res);
-            setMessage(res.data.message);
-            setShowMessage(true);
+            console.log(res);
+            
+            if(res.status === 200){
+                setShowMessage(true);
+                setMessage(res.data.message);
+            }
+
+            if(res.status === 204){
+                setNoContent(true);
+                setnoContentMessage("A seat has been reserved for this name already.");     
+
+            }
+
+            if(res.status === 406){
+                setNoContent(true);
+                setnoContentMessage("Please make sure you type in your name and the number of accompanying guests.");
+       
+
+            }
+            
         })
+        .finally(() => {
+            setTimeout(() => {
+            
+                setFormValues({...formValues, name: "", numOfGuests: "" });
+                setShowMessage(false);
+                setNoContent(false);
+    
+    
+            }, 3000);
+        })
+
+
+   
+     
 
         
     }, [formValues, id]);
 
 
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        // console.log(errors)
-        if(Object.keys(errors).length === 0 && isSubmit){
+    //     // console.log(errors)
+    //     if(Object.keys(errors).length === 0 && isSubmit){
         
-            postData();
-        }
-    }, [errors, isSubmit, postData]);
+    //         postData();
+            
+    //     }
+    // }, [errors, isSubmit, postData]);
 
 
     const validate = (values) => {
@@ -107,7 +163,7 @@ const JoinForm = () => {
                         <div className="form">
 
                             <>
-                                {showMessage && <span className='success-message'>{message}</span>}
+                                {showMessage ? <span className='success-message'>{message}</span> : noContent ? <span className='no-content-message'>{noContentMessage}</span> : <div></div>}
                             
                             </>
                             
