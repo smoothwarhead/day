@@ -305,6 +305,30 @@ input{
   
 }
 
+.admin-filter-btns{
+  width: 40%;
+  height: fit-content;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.filter-btns{
+  width: fit-content;
+  height: fit-content;
+  padding: 5px 20px;
+  border: 1px solid #414436;
+  font-size: 0.75em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-btns:hover{
+  background: #4F5244;
+  color: #dbf6e1;
+}
+
 .container-title{
   margin-top: 50px;
   font-size: 3em;
@@ -360,6 +384,22 @@ input{
   padding: 5px 20px;
   text-align: left;
   margin-bottom: 10px;
+}
+
+
+.total-guests{
+  display: block;
+  margin-top: 20px;
+  text-align: right;
+  background-color: #65350F;
+  color: #E4D5B9;
+  padding: 20px;
+  font-size: 1.2em;
+}
+
+
+.network-error{
+  font-size: 1.25em;
 }
 
 
@@ -1048,7 +1088,7 @@ input{
   }
 
   .trads{
-    left: -10px;
+    left: 0px;
   }
 
   .join-us-btn{

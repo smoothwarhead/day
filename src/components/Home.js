@@ -14,7 +14,7 @@ import useMediaQuery from '../hooks/useMediaQuery';
 
 // const openVariants= {
 //   hidden: {
-//       scale: 0,
+//     
 //       opacity: 1
 //   },
 
@@ -29,37 +29,9 @@ import useMediaQuery from '../hooks/useMediaQuery';
 
 
 
-// const whiteVariants= {
-//   hidden: {
-//       scale: 0,
-//       originX: "50%",
-//       opacity: 0
-//   },
 
-//   visible: {
-//     scale: 1.0,
-//     x: 0,
-//     opacity: 1,
-//     transition: { delay: 6, duration: 3, ease: "easeInOut" }
 
-//   }
-// }
 
-// const partyVariants= {
-//   hidden: {
-//       scale: 0,
-//       originX: "-80%",
-//       opacity: 0
-//   },
-
-//   visible: {
-//     scale: 1.0,
-//     x: -20,
-//     opacity: 1,
-//     transition: { delay: 3, duration: 3, ease: "easeInOut" }
-
-//   }
-// }
 
 
 
@@ -186,7 +158,7 @@ const allPartyVariants = is1024 ? partyVariants1024 :
 
       {!open ? <div></div> : 
 
-        <div className='open'
+        <motion.div className='open'
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           transition={{ delay: 9, duration: 1.5 }}
@@ -195,7 +167,7 @@ const allPartyVariants = is1024 ? partyVariants1024 :
           <img src='/images/env-open.png' alt='open'/>
 
 
-        </div>
+        </motion.div>
 
         // <motion.div className='open'
         //   initial={{ opacity: 1 }}
