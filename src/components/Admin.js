@@ -49,7 +49,7 @@ const Admin = () => {
         Axios.get('/admin')
         .then((res) => {
 
-            console.log(res.data.guests);
+            console.log(res);
 
             if(res.status === 200 && res.data.guests.length === 0){
                 setMessage(res.data.message);
