@@ -52,6 +52,7 @@ const Admin = () => {
         Axios.get('https://main-day.herokuapp.com/admin')
         .then((res) => {
 
+            console.log(res);
 
             if(res.status === 200 && res.data.guests.length === 0){
                 setMessage(res.data.message);
