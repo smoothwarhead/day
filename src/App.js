@@ -1,9 +1,11 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { useState } from 'react';
 import Home from './components/Home';
 import JoinForm from './components/JoinForm';
 import Admin from './components/Admin';
 import Music from './components/Music';
+import { AudioContext } from './context/AudioContext';
 // import useMediaQuery from './hooks/useMediaQuery';
 
 
@@ -12,6 +14,9 @@ import Music from './components/Music';
 
 
 function App() {
+
+  const [play, setPlay] = useState(false);
+  
 
   
   return (
@@ -22,14 +27,16 @@ function App() {
 
       <Music />
       <BrowserRouter>
-        <Routes>
+        <AudioContext.Provider value={{ play, setPlay }}>
+          <Routes>
 
-          <Route exact path="/" element={ <Home /> } />
-          <Route exact path="/save-a-date/:id" element={ <JoinForm /> } />
-          <Route exact path="/admin" element={ <Admin /> } />
+            <Route exact path="/" element={ <Home /> } />
+            <Route exact path="/save-a-date/:id" element={ <JoinForm /> } />
+            <Route exact path="/admin" element={ <Admin /> } />
 
-        </Routes>
+          </Routes>
       
+        </AudioContext.Provider>
       </BrowserRouter>
       
     </div>

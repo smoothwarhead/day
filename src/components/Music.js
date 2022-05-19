@@ -1,39 +1,30 @@
 
-import { useRef } from "react";
+import { useContext } from "react";
 import Song from "../audioFile/best-part.mp3";
-// import ReactAudioPlayer from 'react-audio-player';
+import ReactHowler from 'react-howler';
+import { AudioContext } from "../context/AudioContext";
 
 function Music() {
 
-  const audioRef = useRef();
 
-  // useEffect(() => {
-  //   // const audio = new Audio(Song);
-    
-  //   // audio.addEventListener("canplay", event => {
-  //   //   audio.play();
-  //   //   audio.volume = 0.2;
-  //   //   audio.controls = true;
-  //   // })
+  const { play } = useContext(AudioContext);
 
-  //   audioRef.current.src = 
-    
-    
-  // },[])
+  
+
 
 
 
   return (
       
     <div>
-        <audio 
-          className="audio-play" 
-          src={Song}
-          autoPlay
-          controls
-          ref={audioRef}
-        >          
-        </audio>
+      <ReactHowler 
+        src={Song}
+        playing={play}
+        volume={0.05}
+        html5={true}
+      
+      />
+       
     </div>
   )
 

@@ -1,11 +1,12 @@
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { tradsVariants1024, tradsVariants130, tradsVariants280, tradsVariants375, tradsVariants440, tradsVariants520, tradsVariants768, tradsVariants840, tradsVariants956 } from '../files/tradsVariants';
 import { whiteVariants1024, whiteVariants130, whiteVariants280, whiteVariants375, whiteVariants440, whiteVariants520, whiteVariants768, whiteVariants840, whiteVariants956 } from '../files/whiteVariants';
 import { partyVariants1024, partyVariants130, partyVariants280, partyVariants375, partyVariants440, partyVariants520, partyVariants768, partyVariants840, partyVariants956 } from '../files/partyVariants';
 import useMediaQuery from '../hooks/useMediaQuery';
+import { AudioContext } from '../context/AudioContext';
 
 // import { is1024, is130, is280, is375, is440, is520, is768, is840, is956 } from '../hooks/media';
 
@@ -37,6 +38,9 @@ import useMediaQuery from '../hooks/useMediaQuery';
 
 
 function Home() {
+
+
+  const { setPlay } = useContext(AudioContext);
 
   
 
@@ -97,6 +101,7 @@ const allPartyVariants = is1024 ? partyVariants1024 :
 
   const handleOpen = () => {
     setOpen(true);
+    setPlay(true);
   }
 
 

@@ -12,7 +12,9 @@ const Admin = () => {
     const [showWhite, setShowWhite] = useState(false);
     const [showParty, setShowParty] = useState(false);
     const [isEmpty, setIsEmpty] = useState(false);
+    const [isPending, setIsPending] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
+
 
 
     const handleAll = () => {
@@ -50,21 +52,23 @@ const Admin = () => {
         Axios.get('https://main-day.herokuapp.com/admin')
         .then((res) => {
 
-            console.log(res);
 
             if(res.status === 200 && res.data.guests.length === 0){
-                setIsEmpty(true);
                 setMessage(res.data.message);
+                setIsEmpty(true);
+                setIsPending(false);
 
             }
             if(res.status === 201 && res.data.guests.length > 0){
-                setIsEmpty(false);
                 setGuests(res.data.guests);
+                setIsEmpty(false);
+                setIsPending(false);
+
+
 
             }
 
 
-            console.log(res.data);
         }).catch( error => {
             console.log(error.response.data.error.message);
             setErrorMessage(error.response.data.error.message);
@@ -90,15 +94,18 @@ const Admin = () => {
 
     return ( 
         <>
+            { isPending && <div>Loading ...</div> }
 
-            {
-                
+            <>
 
-                errorMessage === "" ? <div className="network-error" >{errorMessage}</div> :
+                { isEmpty ? <div className="no-guests">{message}</div> :
 
-                <div className="admin-container">
+                    
 
-                    { isEmpty ? <div></div> :
+                    errorMessage === "" ? <div className="network-error" >{errorMessage}</div> :
+
+                    <div className="admin-container">
+
                         <div className="admin-filter-btns">
 
                             <div 
@@ -134,42 +141,42 @@ const Admin = () => {
                             </div>
 
                         </div>
-                    }
-
-                    {
-                        isEmpty ? <div></div> : 
-                        <div className="container-title">{showAll ? "All guests list" : showTrads ? "Trads guests list" : showWhite ? "white guests list" : "Party guests list"}</div>
-
-
-                    }
-
-
-
-                    {guests.length === 0 ? <div className="no-guests">{message}</div> : 
                         
-                        <div className="guests-container">
-                            <div className="titles">
-                                <div className="title-name">Name</div>
-                                <div className="title-number">Number of accompanying guests</div>
+
+                        
+                        <div className="container-title">{showAll ? "All guests list" : showTrads ? "Trads guests list" : showWhite ? "white guests list" : "Party guests list"}</div>
+                        
+
+
+
+                        {guests.length === 0 ? <div></div> : 
+                            
+                            <div className="guests-container">
+                                <div className="titles">
+                                    <div className="title-name">Name</div>
+                                    <div className="title-number">Number of accompanying guests</div>
+                                </div>
+
+                                {guests.length === 0 ? <div></div> : 
+                                        
+                                    getGuests().map((item) => (
+                                        <div className="container-body" key={item.guest_id}>
+                                            <div className="guest-name">{item.name}</div>
+                                            <div className="guest-name">{item.numOfGuests}</div>
+                                        </div>
+                                    ))
+                                }
+
+                                <div className="total-guests"> {`The total number of guests is ${getGuests().length}`}</div>
                             </div>
-
-                            {guests.length === 0 ? <div></div> : 
-                                    
-                                getGuests().map((item) => (
-                                    <div className="container-body" key={item.guest_id}>
-                                        <div className="guest-name">{item.name}</div>
-                                        <div className="guest-name">{item.numOfGuests}</div>
-                                    </div>
-                                ))
-                            }
-
-                            <div className="total-guests"> {`The total number of guests is ${getGuests().length}`}</div>
-                        </div>
-                    }
+                        }
 
 
-                </div>
-            }
+                    </div>
+                }
+
+            </>
+
 
             
         
