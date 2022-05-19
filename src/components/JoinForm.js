@@ -20,6 +20,8 @@ const JoinForm = () => {
     const [noContentMessage, setnoContentMessage] = useState("");
     const [showMessage, setShowMessage] = useState(false);
     const [noContent, setNoContent] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
+
 
 
 
@@ -65,7 +67,7 @@ const JoinForm = () => {
 
     const postData = useCallback(() => {
 
-        Axios.post(`/save-a-date/${id}`, formValues)
+        Axios.post(`https://main-day.herokuapp.com/save-a-date/${id}`, formValues)
         .then((res) => {
             console.log(res);
             
@@ -97,6 +99,10 @@ const JoinForm = () => {
     
     
             }, 3000);
+        }).catch((error) => {
+
+            console.log(error.response.data.error.message);
+            setErrorMessage(error.response.data.error.message);
         })
 
 
@@ -137,7 +143,9 @@ const JoinForm = () => {
 
     return ( 
         <>
-            <div className="join-container">
+            {
+                errorMessage !== "" ? <div className="network-error" >{errorMessage}</div> :
+                <div className="join-container">
                 <div className="left-side">
                     <div className="img-container">
                         <img src='/images/left.png' alt='left'/>
@@ -209,7 +217,8 @@ const JoinForm = () => {
 
 
                 
-            </div>
+                </div>
+            }
         </>
      );
 }

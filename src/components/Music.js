@@ -1,5 +1,5 @@
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Song from "../audioFile/best-part.mp3";
 // import ReactAudioPlayer from 'react-audio-player';
 

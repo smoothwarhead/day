@@ -46,7 +46,7 @@ const Admin = () => {
     
 
     useEffect(() => {
-        Axios.get('/admin')
+        Axios.get('https://main-day.herokuapp.com/admin')
         .then((res) => {
 
             console.log(res);
