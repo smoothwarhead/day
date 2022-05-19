@@ -11,6 +11,7 @@ const Admin = () => {
     const [showTrads, setShowTrads] = useState(false);
     const [showWhite, setShowWhite] = useState(false);
     const [showParty, setShowParty] = useState(false);
+    const [isEmpty, setIsEmpty] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
 
 
@@ -52,10 +53,14 @@ const Admin = () => {
             console.log(res);
 
             if(res.status === 200 && res.data.guests.length === 0){
+                setIsEmpty(true);
                 setMessage(res.data.message);
+
             }
             if(res.status === 201 && res.data.guests.length > 0){
+                setIsEmpty(false);
                 setGuests(res.data.guests);
+
             }
 
 
@@ -89,46 +94,55 @@ const Admin = () => {
             {
                 
 
-                errorMessage !== "" ? <div className="network-error" >{errorMessage}</div> :
+                errorMessage === "" ? <div className="network-error" >{errorMessage}</div> :
 
                 <div className="admin-container">
 
-                    <div className="admin-filter-btns">
+                    { isEmpty ? <div></div> :
+                        <div className="admin-filter-btns">
 
-                        <div 
-                            className="filter-btns trads-btn"
-                            onClick={handleAll}
-                        
-                        >
-                            All guests
+                            <div 
+                                className="filter-btns trads-btn"
+                                onClick={handleAll}
+                            
+                            >
+                                All guests
+                            </div>
+
+                            <div 
+                                className="filter-btns trads-btn"
+                                onClick={handleTrads}
+                            
+                            >
+                                Trads guests
+                            </div>
+
+                            <div 
+                                className="filter-btns white-btns"
+                                onClick={handleWhite}
+                            >
+                                white guests
+                            </div>
+
+
+                            <div 
+                                className="filter-btns party-btns"
+                                onClick={handleParty}
+                            
+                            >
+                                Party guests
+                            </div>
+
                         </div>
+                    }
 
-                        <div 
-                            className="filter-btns trads-btn"
-                            onClick={handleTrads}
-                        
-                        >
-                            Trads guests
-                        </div>
-                        <div 
-                            className="filter-btns white-btns"
-                            onClick={handleWhite}
-                        >
-                            white guests
-                        </div>
+                    {
+                        isEmpty ? <div></div> : 
+                        <div className="container-title">{showAll ? "All guests list" : showTrads ? "Trads guests list" : showWhite ? "white guests list" : "Party guests list"}</div>
 
 
-                        <div 
-                            className="filter-btns party-btns"
-                            onClick={handleParty}
-                        
-                        >
-                            Party guests
-                        </div>
+                    }
 
-                    </div>
-
-                    <div className="container-title">{showAll ? "All guests list" : showTrads ? "Trads guests list" : showWhite ? "white guests list" : "Party guests list"}</div>
 
 
                     {guests.length === 0 ? <div className="no-guests">{message}</div> : 
