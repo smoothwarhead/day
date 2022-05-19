@@ -62,7 +62,6 @@ const Admin = () => {
             }
             if(res.status === 201 && res.data.guests.length > 0){
                 setGuests(res.data.guests);
-                setIsEmpty(false);
                 setIsPending(false);
 
 
@@ -95,7 +94,7 @@ const Admin = () => {
 
     return ( 
         <>
-            { isPending && <div>Loading ...</div> }
+            { isPending ? <div>Loading ...</div> :
 
             <>
 
@@ -177,6 +176,9 @@ const Admin = () => {
                 }
 
             </>
+
+
+            }
 
 
             
