@@ -13,7 +13,7 @@ const Admin = () => {
     const [showParty, setShowParty] = useState(false);
     const [isEmpty, setIsEmpty] = useState(false);
     const [isPending, setIsPending] = useState(true);
-    const [errorMessage, setErrorMessage] = useState("");
+    const [errorMessage, setErrorMessage] = useState(null);
 
 
 
@@ -49,7 +49,7 @@ const Admin = () => {
     
 
     useEffect(() => {
-        Axios.get('https://main-day.herokuapp.com/admin')
+        Axios.get('http://localhost:8000/admin')
         .then((res) => {
 
             console.log(res);
@@ -94,15 +94,12 @@ const Admin = () => {
 
     return ( 
         <>
-            { isPending ? <div>Loading ...</div> :
+            { isPending && <div>Loading ...</div> }
+            { errorMessage && <div className="network-error" >{errorMessage}</div>}
 
             <>
 
                 { isEmpty ? <div className="no-guests">{message}</div> :
-
-                    
-
-                    errorMessage === "" ? <div className="network-error" >{errorMessage}</div> :
 
                     <div className="admin-container">
 
@@ -176,9 +173,6 @@ const Admin = () => {
                 }
 
             </>
-
-
-            }
 
 
             
