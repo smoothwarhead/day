@@ -49,7 +49,7 @@ const Admin = () => {
     
 
     useEffect(() => {
-        Axios.get('http://localhost:8000/admin')
+        Axios.get('https://main-day.herokuapp.com/admin')
         .then((res) => {
 
             console.log(res);
