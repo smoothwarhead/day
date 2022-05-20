@@ -20,7 +20,7 @@ function Music() {
       <ReactHowler 
         src={Song}
         playing={play}
-        volume={0.2}
+        volume={0.5}
         html5={true}
       
       />
