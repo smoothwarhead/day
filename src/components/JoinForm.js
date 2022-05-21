@@ -21,6 +21,7 @@ const JoinForm = () => {
     const [showMessage, setShowMessage] = useState(false);
     const [noContent, setNoContent] = useState(false);
     const [errorMessage, setErrorMessage] = useState("");
+    const [isSaved, setIsSaved] = useState(true);
 
 
 
@@ -35,6 +36,8 @@ const JoinForm = () => {
     }
 
     const handleSubmit = () => {
+
+        setIsSaved(false);
 
         
         if(formValues.name === "" || formValues.numOfGuests === ""){
@@ -72,6 +75,7 @@ const JoinForm = () => {
             console.log(res);
             
             if(res.status === 200){
+                setIsSaved(true);
                 setShowMessage(true);
                 setMessage(res.data.message);
             }
@@ -202,7 +206,7 @@ const JoinForm = () => {
 
                                 </div>
 
-                                <div className="btn" onClick={handleSubmit}>Save a seat</div>
+                                <div className="btn" onClick={handleSubmit}>{isSaved ? "Save a seat" : "Saving..."}</div>
                                 <div className="empty-block"></div>
 
                             </form>
