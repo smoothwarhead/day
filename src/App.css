@@ -162,6 +162,10 @@
   height: 80%;
 }
 
+.wedding-card-container a, .party-card-container a{
+  text-decoration: none;
+}
+
 
 .card-image img{
   width: 100%;
@@ -432,18 +436,29 @@ input{
 }
 
 .container-body{
+  background: #dbf6e1;
   display: flex;
   width: 100%;
+  margin-bottom: 10px;
+
 }
 
 .guest-name{
-  background: #dbf6e1;
   width: 50%;
   height: fit-content;
   font-size: 0.875em;
   padding: 5px 20px;
   text-align: left;
-  margin-bottom: 10px;
+}
+
+.delete-btn{
+  font-size: 0.875em;
+  width: fit-content;
+  height: 100%;
+  padding: 5px 20px;
+  background: rgb(240, 107, 107);
+  color: white;
+  cursor: pointer;
 }
 
 

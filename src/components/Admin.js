@@ -8,43 +8,37 @@ const Admin = () => {
     const [guests, setGuests] = useState([]);
     const [message, setMessage] = useState("");
     const [showAll, setShowAll] = useState(true);
-    const [showTrads, setShowTrads] = useState(false);
-    const [showWhite, setShowWhite] = useState(false);
-    const [showParty, setShowParty] = useState(false);
+    const [showWedding, setShowWedding] = useState(false);
+    const [showCeleb, setShowCeleb] = useState(false);
     const [isEmpty, setIsEmpty] = useState(false);
     const [isPending, setIsPending] = useState(true);
+    const [successMessage, setSuccessMessage] = useState(null);
     const [errorMessage, setErrorMessage] = useState(null);
 
 
 
     const handleAll = () => {
         setShowAll(true);
-        setShowTrads(false);
-        setShowWhite(false);
-        setShowParty(false);
+        setShowWedding(false);
+        setShowCeleb(false);
+    
     }
 
-    const handleTrads = () => {
-        setShowTrads(true);
+    const handleWedding = () => {
+        setShowWedding(true);
         setShowAll(false);
-        setShowWhite(false);
-        setShowParty(false);
+        setShowCeleb(false);
+        
     }
 
-    const handleWhite = () => {
-        setShowWhite(true);
-        setShowTrads(false);
+    const handleCeleb = () => {
+        setShowCeleb(true);
+        setShowWedding(false);
         setShowAll(false);
-        setShowParty(false);
+       
     }
 
-    const handleParty = () => {
-        setShowParty(true);
-        setShowWhite(false);
-        setShowTrads(false);
-        setShowAll(false);
-    }
-
+    
 
     
 
@@ -77,19 +71,37 @@ const Admin = () => {
     }, []);
 
 
+    const handleDelete = (id) =>{
+        Axios.delete(`https://main-day.herokuapp.com/delete/${id}`)
+        .then((res) => {
+            console.log(res);
+            if(res.status === 200){
+                setSuccessMessage(res.data.message);
+
+                setTimeout(() => {
+                    setSuccessMessage("");
+
+                }, 3000)
+
+                const updatedGuests = guests.filter(item => item.guest_id !== id);
+                setGuests(updatedGuests);
+                
+            }
+        })
+    }
+
+
     const getGuests = () => {
         if(showAll){
             return guests;
         }
-        if(showTrads){
-            return guests.filter(guest => guest.event === "Trads");
+        if(showWedding){
+            return guests.filter(guest => guest.event === "Wedding");
         }
-        if(showWhite){
-            return guests.filter(guest => guest.event === "White");
+        if(showCeleb){
+            return guests.filter(guest => guest.event === "Wedding Celebration");
         }
-        if(showParty){
-            return guests.filter(guest => guest.event === "Party");
-        }
+        
     }
 
     return ( 
@@ -115,35 +127,29 @@ const Admin = () => {
 
                             <div 
                                 className="filter-btns trads-btn"
-                                onClick={handleTrads}
+                                onClick={handleWedding}
                             
                             >
-                                Trads guests
+                                wedding
                             </div>
 
                             <div 
                                 className="filter-btns white-btns"
-                                onClick={handleWhite}
+                                onClick={handleCeleb}
                             >
-                                white guests
+                                wedding celebration
                             </div>
 
 
-                            <div 
-                                className="filter-btns party-btns"
-                                onClick={handleParty}
-                            
-                            >
-                                Party guests
-                            </div>
 
                         </div>
                         
 
                         
-                        <div className="container-title">{showAll ? "All guests list" : showTrads ? "Trads guests list" : showWhite ? "white guests list" : "Party guests list"}</div>
+                        <div className="container-title">{showAll ? "All guests list" : showWedding ? "Wedding guests list" : "wedding celebration guests list"}</div>
                         
 
+                        {successMessage && <span className='success-message'>{successMessage}</span>}
 
 
                         {guests.length === 0 ? <div></div> : 
@@ -160,6 +166,7 @@ const Admin = () => {
                                         <div className="container-body" key={item.guest_id}>
                                             <div className="guest-name">{item.name}</div>
                                             <div className="guest-name">{item.numOfGuests}</div>
+                                            <div className="delete-btn" onClick={() => handleDelete(item.guest_id)}>Delete</div>
                                         </div>
                                     ))
                                 }

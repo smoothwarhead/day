@@ -83,7 +83,7 @@ const allWhitesVariants = is1024 ? whiteVariants1024 :
           transition={{ duration: 1.5 }}
 
         >
-          <img src='/images/intro-img.png' alt='intro'/>
+          <img src='/images/intro.png' alt='intro'/>
 
         </motion.div>
       }
