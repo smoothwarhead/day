@@ -14,7 +14,42 @@
   width: 100%;
   height: 100%;
   overflow-y: hidden;
+  background: #4F5244;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
 }
+
+.home-container a{
+  text-decoration: none;
+}
+
+.event-btns{
+  width: fit-content;
+  height: fit-content;
+  background: #caf7d4;
+  color: #4F5244;
+  padding: 10px 30px;
+  font-size: 1em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.event-btns:hover{
+  opacity: 0.5;
+}
+.home-container a:first-child{
+  grid-column: 2/3;
+  grid-row: 3/4;
+}
+.home-container a:last-child{
+  grid-column: 3/5;
+  grid-row: 3/4;
+}
+
+
+
+
 
 .intro{
   position: absolute;
@@ -41,7 +76,7 @@
 .close img{
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 1;
 }
 
 .open{
@@ -69,27 +104,52 @@
   z-index: 3;
 }
 
-.card-container{
-  position: absolute;
-  top: 0;
-  left: 5%;
-  width: 90%;
-  height: fit-content;
-  display: flex;
-  justify-content: space-between;
-  padding: 100px 0;
+.party-container, .wedding-container{
+  width: 100%;
+  height: 110vh;
  
 }
+
+
+.wedding-card-container{
+  position: absolute;
+  top: 0;
+  left: 5%; 
+  width: 90%;
+  height: 100%;
+  z-index: 10;
+ 
+}
+
+.party-card-container{
+  position: absolute;
+  top: 0;
+  left: 5%; 
+  width: 90%;
+  height: 100%;
+  z-index: 10;
+ 
+}
+
 
 .empty{
   display: none;
 }
 
 
-.trads, .white, .party{
-  width: 30%;
+.wedding{
+  width: 65%;
+  height: 100%;
+  z-index: 10;
+  margin: 5% auto;
+  
+}
+
+.party{
+  width: 35%;
   height: 100%;
   z-index: 5;
+  margin: 5% auto;
   
 }
 
@@ -436,18 +496,29 @@ input{
   }
 
 
-  .card-container{
+  /* .card-container{
     width: 95%;
     left: 2%;
     padding: 130px 0;
 
   }
+  */
 
-  .trads, .white, .party{
-    position: relative;
-    top: 15%;
-    width: 31%;
-    height: 70%;
+  .party-container, .wedding-container{
+    height: 100%;    
+  }
+
+  .wedding{
+    width: 70%;
+    height: 80%;
+    margin-top: 10%;
+        
+  }
+
+  .party{
+    
+    width: 35%;
+    height: 80%;
       
   }
 
@@ -499,19 +570,24 @@ input{
   }
 
 
-  .card-container{
-    width: 95%;
-    left: 2%;
-    padding: 130px 0;
-
+  .party-container, .wedding-container{
+   
+    height: 100%;
+    
   }
 
-  .trads, .white, .party{
-    position: relative;
-    top: 15%;
-    width: 31%;
-    height: 70%;
-          
+  .wedding{
+    width: 80%;
+    height: 80%;
+    margin-top: 10%;
+        
+  }
+
+  .party{
+    
+    width: 40%;
+    height: 80%;
+      
   }
 
 
@@ -583,19 +659,23 @@ input{
   }
 
   
-  .card-container{
-    width: 95%;
-    left: 2%;
-    padding: 160px 0;
-
+  .party-container, .wedding-container{
+   
+    height: 100%;
+    
   }
 
-  .trads, .white, .party{
-    position: relative;
-    top: 15%;
-    width: 31%;
-    height: 70%;
-    /* display: none; */
+  .wedding{
+    width: 85%;
+    height: 80%;
+    margin-top: 15%;
+        
+  }
+
+  .party{
+    
+    width: 45%;
+    height: 80%;
       
   }
   
@@ -668,21 +748,24 @@ input{
     left: 25%;
   }
 
-  .card-container{
-    width: 95%;
-    top: 5%;
-    left: 2%;
-    padding: 180px 0;
-  
-
+  .party-container, .wedding-container{
+   
+    height: 100%;
+    
   }
 
-  .trads, .white, .party{
-    position: relative;
-    top: 5%;
-    width: 32%;
-    height: 60%;
-    /* display: none; */
+  .wedding{
+    width: 90%;
+    height: 70%;
+    margin-top: 20%;
+        
+  }
+
+  .party{
+    
+    width: 50%;
+    height: 80%;
+    margin-top: 10%;
       
   }
   
@@ -771,7 +854,7 @@ input{
   
 }
 
-@media (max-width: 768px) and (min-width: 520px) {
+@media (max-width: 768px) and (min-width: 650px) {
 
 
   .intro{
@@ -795,19 +878,155 @@ input{
     left: 28%;
   }
 
-  .card-container{
-    width: 95%;
-    left: 2%;
-    padding: 220px 0;
+  .party-container, .wedding-container{
+    height: 100%;    
+  }
+
+  .wedding{
+    width: 92%;
+    height: 65%;
+    margin-top: 25%;
+        
+  }
+
+  .party{
+    
+    width: 55%;
+    height: 80%;
+    margin-top: 10%;
+      
+  }
+
+  .join-us-btn{
+    font-size: 12px;
+    padding: 0 20px;
+  }
+
+  
+  .join-container{
+    overflow-y: scroll;
+  }
+  
+  .left-side{
+    grid-column: 1/2;
+    grid-row: 1/2;
+          
+  }
+  
+  .form-side{
+    grid-column: 1/4;
+    grid-row: 2/3;
+  
+  }
+  
+  .right-side{
+    grid-column: 3/4;
+    grid-row: 1/2;
+      
+  }
+
+  .img-container{
+    width: 100%;
+    height: 90%;
+  }
+
+
+  .form-container{
+    width: 60%;
+    margin: -40px auto;
+    height: fit-content;
 
   }
 
-  .trads, .white, .party{
-    position: relative;
-    top: 20%;
-    width: 31%;
-    height: 52%;
-    /* display: none; */
+  .info{
+    font-size: 0.75em;
+    line-height: 1.5em;
+       
+  }
+
+  .form{
+    margin-top: 1.5em;
+      
+  }
+
+  .attr-block{
+    width: 100%;
+    height: 75px;
+    margin-bottom: 40px;
+  }
+
+  .attr-title{
+    font-size: 0.75em;
+    
+  }
+
+  .btn{
+    
+    font-size: 0.625em;
+    left: 30%;
+    bottom: -130px;
+    padding: 5px 20px;
+    
+  }
+
+  .empty-block{
+    display: block;
+    position: absolute;
+    padding: 50px 20px;
+    margin-top: 40px;
+    bottom: -300px;
+    
+  }
+
+  .error-message{
+    font-size: 0.625em;
+  }
+
+  
+}
+
+@media (max-width: 650px) and (min-width: 520px) {
+
+
+  .intro{
+    top: 40%;
+    left: 28%;
+    width: 45%;
+    height: 18%;
+  }
+
+  .close{
+    width: 45%;
+    height: 18%;
+    left: 28%;
+    top: 40%;
+  }
+
+
+
+  .open{
+    width: 45%;
+    height: 25%;
+    top: 28%;
+    left: 28%;
+  }
+
+  .party-container, .wedding-container{
+    height: 100%;    
+  }
+
+  .wedding{
+    width: 100%;
+    height: 60%;
+    margin-top: 35%;
+        
+  }
+
+  .party{
+    
+    width: 65%;
+    height: 75%;
+    margin-top: 20%;
       
   }
 
@@ -923,16 +1142,23 @@ input{
     top: 30%;
     left: 25%;
   }
+  .party-container, .wedding-container{
+    height: 100%;    
+  }
 
-  .card-container{
-    width: 60%;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: space-around;
-    left: 20%;
-    padding: 40px 0;
+  .wedding{
+    width: 100%;
+    height: 45%;
+    margin-top: 50%;
+        
+  }
 
+  .party{
     
+    width: 75%;
+    height: 70%;
+    margin-top: 25%;
+      
   }
 
   .empty{
@@ -942,18 +1168,6 @@ input{
   
   }
 
-  .trads, .white, .party{
-    position: relative;
-    top: 10%;
-    width: 100%;
-    height: 60%;
-        /* display: none; */
-      
-  }
-
-  .trads{
-    left: -10px;
-  }
 
 
   .join-us-btn{
@@ -1059,16 +1273,23 @@ input{
     left: 15%;
   }
 
+  .party-container, .wedding-container{
+    height: 100%;    
+  }
 
-  .card-container{
-    width: 70%;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: space-around;
-    left: 15%;
-    padding: 40px 0;
+  .wedding{
+    width: 100%;
+    height: 40%;
+    margin-top: 60%;
+        
+  }
 
+  .party{
     
+    width: 80%;
+    height: 65%;
+    margin-top: 30%;
+      
   }
 
   .empty{
@@ -1078,18 +1299,7 @@ input{
   
   }
 
-  .trads, .white, .party{
-    position: relative;
-    top: 10%;
-    width: 100%;
-    height: 60%;
-        /* display: none; */
-      
-  }
-
-  .trads{
-    left: 0px;
-  }
+ 
 
   .join-us-btn{
     padding: 0 30px;
@@ -1199,17 +1409,25 @@ input{
   }
 
 
-  .card-container{
-    width: 70%;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: space-around;
-    left: 15%;
-    top: 3%;
-    padding: 40px 0;
-       
+  .party-container, .wedding-container{
+    height: 100%;    
   }
 
+
+  .wedding{
+    width: 100%;
+    height: 35%;
+    margin-top: 90%;
+        
+  }
+
+  .party{
+    
+    width: 85%;
+    height: 60%;
+    margin-top: 50%;
+      
+  }
   .empty{
     display: block;
     width: 100%;
@@ -1217,18 +1435,6 @@ input{
   
   }
 
-  .trads, .white, .party{
-    position: relative;
-    top: 10%;
-    width: 100%;
-    height: 50%;
-        /* display: none; */
-      
-  }
-
-  .trads{
-    left: 0px;
-  }
 
   .join-us-btn{
     padding: 0 30px;
@@ -1337,17 +1543,25 @@ input{
     left: 10%;
   }
 
-
-  .card-container{
-    width: 85%;
-    flex-wrap: wrap;
-    gap: 40px;
-    justify-content: space-around;
-    left: 8%;
-    padding: 60px 0;
-
-    
+  .party-container, .wedding-container{
+    height: 100%;    
   }
+
+  .wedding{
+    width: 100%;
+    height: 30%;
+    margin-top: 90%;
+        
+  }
+
+  .party{
+    
+    width: 90%;
+    height: 50%;
+    margin-top: 50%;
+      
+  }
+
 
   .empty{
     display: block;
@@ -1356,20 +1570,10 @@ input{
   
   }
 
-  .trads, .white, .party{
-    position: relative;
-    top: 10%;
-    width: 100%;
-    height: 60%;
-        /* display: none; */
-      
-  }
-
-  .trads{
-    left: -10px;
-  }
+  
 
   .join-us-btn{
+    font-size: 5vw;
     padding: 0 30px;
 
   }

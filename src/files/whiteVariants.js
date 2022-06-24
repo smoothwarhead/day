@@ -9,7 +9,7 @@ export const whiteVariants1024 = {
         scale: 1.0,
         x: 0,
         opacity: 1,
-        transition: { delay: 6, duration: 3, ease: "easeInOut" }
+        transition: { duration: 3, ease: "easeInOut" }
         
     }
 };
@@ -27,7 +27,7 @@ export const whiteVariants956 = {
       x: 0,
       y: 0,
       opacity: 1,
-      transition: { delay: 6, duration: 3, ease: "easeInOut" }
+      transition: { duration: 3, ease: "easeInOut" }
   
     }
 };
@@ -45,7 +45,7 @@ export const whiteVariants840 = {
       x: 0,
       y: 0,
       opacity: 1,
-      transition: { delay: 6, duration: 3, ease: "easeInOut" }
+      transition: { duration: 3, ease: "easeInOut" }
   
     }
 };
@@ -63,7 +63,7 @@ export const whiteVariants768 = {
       x: 0,
       y: 0,
       opacity: 1,
-      transition: { delay: 6, duration: 3, ease: "easeInOut" }
+      transition: { duration: 3, ease: "easeInOut" }
   
     }
 };
@@ -81,7 +81,7 @@ export const whiteVariants520 = {
       x: 0,
       y: 0,
       opacity: 1,
-      transition: { delay: 6, duration: 3, ease: "easeInOut" }
+      transition: {duration: 3, ease: "easeInOut" }
   
     }
 };
@@ -100,7 +100,7 @@ export const whiteVariants440 = {
       x: 0,
       y: 0,
       opacity: 1,
-      transition: { delay: 6, duration: 3, ease: "easeInOut" }
+      transition: { duration: 3, ease: "easeInOut" }
   
     }
 };
@@ -117,7 +117,7 @@ export const whiteVariants375 = {
       x: 0,
       y: 0,
       opacity: 1,
-      transition: { delay: 6, duration: 3, ease: "easeInOut" }
+      transition: { duration: 3, ease: "easeInOut" }
   
     }
 };
@@ -135,7 +135,7 @@ export const whiteVariants280 = {
       x: 0,
       y: 0,
       opacity: 1,
-      transition: { delay: 6, duration: 3, ease: "easeInOut" }
+      transition: { duration: 3, ease: "easeInOut" }
   
     }
 };
@@ -153,7 +153,7 @@ export const whiteVariants130 = {
       x: 0,
       y: 0,
       opacity: 1,
-      transition: { delay: 6, duration: 3, ease: "easeInOut" }
+      transition: { duration: 3, ease: "easeInOut" }
   
     }
 };
